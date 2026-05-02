@@ -1,0 +1,199 @@
+@import url("https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css");
+
+@import "tailwindcss";
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
+  border-radius: 4px;
+  border: 2px solid #1a1a1a;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #5a5a5a;
+}
+
+.pannellum-tooltip {
+  background: black !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.custom-label-hotspot {
+  transform: translate(-50%, -100%);
+  transform-origin: bottom center;
+  z-index: 1;
+}
+
+.custom-label-hotspot:hover {
+  z-index: 999;
+}
+
+.label-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.custom-label-hotspot:hover .label-wrapper {
+  transform: scale(1.05);
+}
+
+.label-banner {
+  color: white;
+  padding: clamp(8px, 1.2vw, 15px);
+  border-radius: 8px;
+  width: clamp(180px, 22vw, 220px);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.label-title {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-weight: bold;
+}
+
+.label-distance {
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.label-travel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
+.label-travel span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.label-pointer {
+  margin-top: -15px;
+  z-index: -1;
+}
+
+.pulsing-hotspot {
+  width: 50px;
+  height: 50px;
+  background-image: url("./assets/hotspot1.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+}
+
+.pulsing-hotspot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.pulsing-tooltip-wrapper {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.pulsing-hotspot:hover .pulsing-tooltip-wrapper {
+  opacity: 1;
+}
+
+.pulsing-tooltip-text {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+
+.pulse-marker {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Add to the bottom of index.css */
+#viewer-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: -1; /* Keep it behind the Navigation UI */
+}
+
+/* Fix for Pannellum's internal container */
+.pnlm-container {
+  background-color: black !important;
+}
+
+.pnlm-orientation-button,
+.pnlm-compass {
+  display: none !important;
+}
+
+.vr-label .label-card {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  min-width: 160px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vr-label .title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.vr-label .distance {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.vr-label .travel {
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: 0.9;
+}
