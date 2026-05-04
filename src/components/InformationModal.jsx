@@ -13,7 +13,7 @@ const InformationModal = ({ onClose }) => {
       >
         <div className="flex justify-between items-start mb-4">
           <h1 className="text-2xl md:text-3xl font-bold text-[#D0BF7A]">
-            Information
+            Project Information
           </h1>
           <button
             onClick={onClose}
@@ -26,18 +26,23 @@ const InformationModal = ({ onClose }) => {
         <div className="text-left space-y-4 text-sm md:text-base text-gray-300">
           <p>
             <span className="font-bold text-white">
-              This virtual tour was captured on 31st March 2026 by Propwizard
-              Studio.
-            </span>{" "}
-            The on-site data and visuals are accurate as of this date, and any
-            subsequent changes to the project’s construction, appearance, or
-            development are subject to the developer’s discretion.
+              This is a high-fidelity 3D interactive visualization of a 3 BHK
+              Luxury Apartment, developed by Propwizard Studio for demonstration
+              purposes.
+            </span>
           </p>
           <p>
-            All images, layouts, and representations are for illustrative
-            purposes only and may include artistic impressions, enhancements, or
-            simulated environments. Actual project specifications, colors,
-            materials, and surroundings may vary.
+            The layout, spatial proportions, and architectural elements are
+            based on standard technical blueprints. This demo serves as an
+            immersive 3D representation to showcase potential interior finishes,
+            space utilization, and lifestyle flow.
+          </p>
+          <p>
+            <span className="text-[#D0BF7A] italic">Note:</span> All textures,
+            lighting effects, and furniture placements are artistic 3D
+            interpretations. Final construction materials, hardware, and
+            surrounding views may vary based on specific site conditions and
+            developer finalizations.
           </p>
         </div>
       </div>

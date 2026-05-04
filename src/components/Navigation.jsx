@@ -213,18 +213,18 @@ const Navigation = ({
 
       {/* SCENE NAVIGATION */}
       {!isVRMode && (
-        <div className="absolute bottom-3 left-1/2 mb-5 -translate-x-1/2 w-full max-w-[95%] flex justify-center pointer-events-auto">
-          <div className="bg-black/20 backdrop-blur-md p-2 rounded-xl flex gap-2 overflow-x-auto">
+        <div className="absolute bottom-3 left-1/2 mb-1 -translate-x-1/2 w-full max-w-[95%] flex justify-center pointer-events-auto">
+          <div className=" p-2 rounded-xl flex gap-2 overflow-x-auto">
             {Object.keys(navLinks).map((linkName) => {
               const isActive = currentSceneId === navLinks[linkName].sceneId;
               return (
                 <button
                   key={linkName}
                   onClick={() => onSelectScene(linkName)}
-                  className={`px-1 lg:px-3 text-sm lg:text-lg py-1 rounded ${
+                  className={`px-1 lg:px-3 text-sm lg:text-lg py-1 backdrop-blur-xs rounded-xs border border-white ${
                     isActive
                       ? "bg-[#D0BF7A] text-black"
-                      : "text-white hover:bg-white/10"
+                      : "text-white bg-black/20 hover:bg-white/10"
                   }`}
                 >
                   {linkName}
