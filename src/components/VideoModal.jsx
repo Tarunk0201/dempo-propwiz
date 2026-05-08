@@ -11,7 +11,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }) => {
     const match = url.match(regExp);
     const videoId = match && match[2].length === 11 ? match[2] : null;
     return videoId
-      ? `https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1`
+      ? `https://www.youtube.com/embed/tQKJti9W3xA?autoplay=1&rel=0&modestbranding=1`
       : url;
   };
 
