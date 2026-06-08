@@ -75,18 +75,18 @@ const Navigation = ({
     "bg-black/40 backdrop-blur-md border border-white/20 text-white transition-all duration-300";
 
   const utilityItems = [
-    { label: "Information", icon: <Info size={24} /> },
-    // {
-    //   label: "Location",
-    //   icon: <MapPin size={24} />,
-    //   url: "https://maps.app.goo.gl/7jedVvpx7wJNoXAX7",
-    // },
-    { label: "Gallery", icon: <Camera size={24} /> },
+    // { label: "Information", icon: <Info size={24} /> },
     {
-      label: "Cinematic Video",
-      icon: <Play size={24} />,
+      label: "Location",
+      icon: <MapPin size={24} />,
+      url: "https://maps.app.goo.gl/9nUmAYB3mqU9yhGQ9",
     },
-    { label: "VR Mode", icon: <RectangleGoggles size={24} /> },
+    { label: "Gallery", icon: <Camera size={24} /> },
+    // {
+    //   label: "Cinematic Video",
+    //   icon: <Play size={24} />,
+    // },
+    // { label: "VR Mode", icon: <RectangleGoggles size={24} /> },
   ];
 
   const handleUtilityClick = (item) => {
@@ -115,14 +115,14 @@ const Navigation = ({
       <div className="absolute top-6 right-6 flex items-center gap-2 pointer-events-auto">
         <button
           onClick={toggleFullScreen}
-          className={`${glassStyle} p-2 rounded hover:bg-[#D0BF7A] hover:text-black`}
+          className={`${glassStyle} p-2 rounded hover:bg-[#0C016D] hover:text-white`}
         >
           {isFullScreen ? <Minimize size={22} /> : <Maximize size={20} />}
         </button>
 
         <button
           onClick={onToggleMute}
-          className={`${glassStyle} p-2 rounded hover:bg-[#D0BF7A] hover:text-black ${
+          className={`${glassStyle} p-2 rounded hover:bg-[#0C016D] hover:text-white ${
             isMuted ? "bg-red-600/50" : ""
           }`}
         >
@@ -172,9 +172,7 @@ const Navigation = ({
             }`}
           >
             <div className="p-4 flex justify-between items-center border-b border-white/10">
-              <span className="text-[#D0BF7A] font-bold text-xs">
-                Navigation
-              </span>
+              <span className="text-white font-bold text-xs">Navigation</span>
               <button onClick={() => setIsSidebarOpen(false)}>
                 <X size={24} />
               </button>
@@ -213,7 +211,7 @@ const Navigation = ({
 
       {/* SCENE NAVIGATION */}
       {!isVRMode && (
-        <div className="absolute bottom-3 left-1/2 mb-1 -translate-x-1/2 w-full max-w-[95%] flex justify-center pointer-events-auto">
+        <div className="absolute bottom-3 left-1/2 mb-1 -translate-x-1/2 w-full max-w-[85%] flex justify-center pointer-events-auto">
           <div className=" p-2 rounded-xl flex gap-2 overflow-x-auto">
             {Object.keys(navLinks).map((linkName) => {
               const isActive = currentSceneId === navLinks[linkName].sceneId;
@@ -223,7 +221,7 @@ const Navigation = ({
                   onClick={() => onSelectScene(linkName)}
                   className={`px-1 lg:px-3 text-sm lg:text-lg py-1 backdrop-blur-xs rounded-xs border border-white ${
                     isActive
-                      ? "bg-[#D0BF7A] text-black"
+                      ? "bg-[#0C016D] text-white"
                       : "text-white bg-black/20 hover:bg-white/10"
                   }`}
                 >

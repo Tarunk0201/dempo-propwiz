@@ -1,6 +1,6 @@
 import { panoramas } from "./panoramas.js";
 
-export const startScene = "entry";
+export const startScene = "p1";
 
 export const pulsingHotspots = {
   aerial: [
@@ -44,13 +44,13 @@ export const pulsingHotspots = {
 };
 
 export const navigationLinks = {
-  ENTRANCE: { sceneId: "entry", pitch: 0, yaw: 0 },
-  "LIVING ROOM": { sceneId: "living-room", facing: 0 },
-  DINING: { sceneId: "dining", facing: 0 },
-  KITCHEN: { sceneId: "kitchen", facing: 0 },
-  "BEDROOM 1": { sceneId: "master-bed-1", facing: 0 },
-  "BEDROOM 2": { sceneId: "kids-room", facing: 0 },
-  BATH: { sceneId: "bath-1", facing: 0 },
+  "Scene 1": { sceneId: "p1", facing: 0 },
+  "Scene 2": { sceneId: "p2", facing: 0 },
+  "Scene 3": { sceneId: "p3", facing: 0 },
+  "Scene 4": { sceneId: "p4", facing: 0 },
+  "Scene 5": { sceneId: "p5", facing: 0 },
+  "Scene 6": { sceneId: "p6", facing: 0 },
+  "Scene 7": { sceneId: "p7", facing: 0 },
 };
 
 export const labelHotspots = {
@@ -163,55 +163,33 @@ export const labelHotspots = {
 };
 
 export const hotspots = {
-  entry: {
-    toLivingRoom: { sceneId: "living-room", pitch: -30, yaw: 10 },
-    toKitchen: { sceneId: "kitchen", pitch: -40, yaw: 250 },
-    toBath1: { sceneId: "bath-1", pitch: -30, yaw: 285 },
-    toKidsRoom: { sceneId: "kids-room", pitch: -25, yaw: 306 },
-    toMasterBed1: { sceneId: "master-bed-1", pitch: -19, yaw: 90 },
-    toDining: { sceneId: "dining", pitch: -40, yaw: -30 },
+  p1: {
+    toP2: { sceneId: "p2", pitch: -5, yaw: 4 },
+    toP7: { sceneId: "p7", pitch: -7, yaw: 60 },
   },
-  "living-room": {
-    toEntry: { sceneId: "entry", pitch: -30, yaw: 73 },
-    toKitchen: { sceneId: "kitchen", pitch: -20, yaw: 100 },
-    toBath1: { sceneId: "bath-1", pitch: -25, yaw: 120 },
-    toMasterBed1: { sceneId: "master-bed-1", pitch: -30, yaw: 30 },
-    toDining: { sceneId: "dining", pitch: -35, yaw: 120 },
+  p2: {
+    toP1: { sceneId: "p1", pitch: -7, yaw: 150 },
+    toP3: { sceneId: "p3", pitch: -8, yaw: -30, facing: 180 },
   },
-  "bath-1": {
-    toEntry: { sceneId: "entry", pitch: -27, yaw: 114 },
-    toMasterBed1: { sceneId: "master-bed-1", pitch: -12, yaw: 97 },
-    toLivingRoom: { sceneId: "living-room", pitch: -25, yaw: 70 },
-    toDining: { sceneId: "dining", pitch: -40, yaw: 70 },
+  p3: {
+    toP2: { sceneId: "p2", pitch: -15, yaw: 260 },
+    toP4: { sceneId: "p4", pitch: -8, yaw: 140 },
   },
-  kitchen: {
-    toLivingRoom: { sceneId: "living-room", pitch: -20, yaw: 230 },
-    toEntry: { sceneId: "entry", pitch: -45, yaw: 270 },
-    toMasterBed1: { sceneId: "master-bed-1", pitch: -18, yaw: 270 },
-    toDining: { sceneId: "dining", pitch: -30, yaw: 213 },
+  p4: {
+    toP3: { sceneId: "p3", pitch: -9, yaw: 190 },
+    toP5: { sceneId: "p5", pitch: -15, yaw: 30 },
   },
-  dining: {
-    toLivingRoom: { sceneId: "living-room", pitch: -34, yaw: 60 },
-    toMasterBed1: { sceneId: "master-bed-1", pitch: -20, yaw: 110 },
-    toEntry: { sceneId: "entry", pitch: -37, yaw: 150 },
-    toKitchen: { sceneId: "kitchen", pitch: -25, yaw: 195 },
-    toBath1: { sceneId: "bath-1", pitch: -45, yaw: 245 },
-    toKidsRoom: { sceneId: "kids-room", pitch: -45, yaw: 296 },
+  p5: {
+    toP4: { sceneId: "p4", pitch: -15, yaw: 35, facing: 180 },
+    toP6: { sceneId: "p6", pitch: -15, yaw: 250 },
   },
-  "kids-room": {
-    toMasterBed1: { sceneId: "master-bed-1", pitch: -14, yaw: 175 },
-    toLivingRoom: { sceneId: "living-room", pitch: -40, yaw: 170 },
+  p6: {
+    toP5: { sceneId: "p5", pitch: -15, yaw: 45 },
+    toP7: { sceneId: "p7", pitch: -10, yaw: 200 },
   },
-  "master-bed-1": {
-    toLivingRoom: { sceneId: "living-room", pitch: -40, yaw: 230 },
-    toMasterBed2: { sceneId: "master-bed-2", pitch: -25, yaw: 74 },
-  },
-  "master-bed-2": {
-    toMasterBed1: { sceneId: "master-bed-1", pitch: -25, yaw: -33 },
-    toBath2: { sceneId: "bath-2", pitch: -45, yaw: 277 },
-  },
-  "bath-2": {
-    toMasterBed2: { sceneId: "master-bed-2", pitch: -40, yaw: 180 },
+  p7: {
+    toP6: { sceneId: "p6", pitch: -8, yaw: 30 },
+    toP1: { sceneId: "p1", pitch: -5, yaw: 290 },
   },
 };
 

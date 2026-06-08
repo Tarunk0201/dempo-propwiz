@@ -47,9 +47,9 @@ const Preloader = ({ images, onLoaded, imagesLoaded }) => {
           alt="Drushika Real Estate"
           className="w-48 object-contain mx-auto mb-8"
         />
-        <div className="w-full bg-gray-700 rounded-full h-2.5">
+        <div className="w-full border border-white bg-gray-700 rounded-full h-2.5">
           <div
-            className="bg-[#D0BF7A] h-2.5 rounded-full transition-all duration-300 ease-linear"
+            className="bg-[#0C016D] h-2.5 rounded-full transition-all duration-300 ease-linear"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
