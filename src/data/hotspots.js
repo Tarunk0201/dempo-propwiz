@@ -51,6 +51,7 @@ export const navigationLinks = {
   "Scene 5": { sceneId: "p5", facing: 0 },
   "Scene 6": { sceneId: "p6", facing: 0 },
   "Scene 7": { sceneId: "p7", facing: 0 },
+  "Scene 8": { sceneId: "p8", facing: 0 },
 };
 
 export const labelHotspots = {
@@ -163,34 +164,34 @@ export const labelHotspots = {
 };
 
 export const hotspots = {
-  p1: {
-    toP2: { sceneId: "p2", pitch: -5, yaw: 4 },
-    toP7: { sceneId: "p7", pitch: -7, yaw: 60 },
-  },
-  p2: {
-    toP1: { sceneId: "p1", pitch: -7, yaw: 150 },
-    toP3: { sceneId: "p3", pitch: -8, yaw: -30, facing: 180 },
-  },
-  p3: {
-    toP2: { sceneId: "p2", pitch: -15, yaw: 260 },
-    toP4: { sceneId: "p4", pitch: -8, yaw: 140 },
-  },
-  p4: {
-    toP3: { sceneId: "p3", pitch: -9, yaw: 190 },
-    toP5: { sceneId: "p5", pitch: -15, yaw: 30 },
-  },
-  p5: {
-    toP4: { sceneId: "p4", pitch: -15, yaw: 35, facing: 180 },
-    toP6: { sceneId: "p6", pitch: -15, yaw: 250 },
-  },
-  p6: {
-    toP5: { sceneId: "p5", pitch: -15, yaw: 45 },
-    toP7: { sceneId: "p7", pitch: -10, yaw: 200 },
-  },
-  p7: {
-    toP6: { sceneId: "p6", pitch: -8, yaw: 30 },
-    toP1: { sceneId: "p1", pitch: -5, yaw: 290 },
-  },
+  // p1: {
+  //   toP2: { sceneId: "p2", pitch: -5, yaw: 4 },
+  //   toP7: { sceneId: "p7", pitch: -7, yaw: 60 },
+  // },
+  // p2: {
+  //   toP1: { sceneId: "p1", pitch: -7, yaw: 150 },
+  //   toP3: { sceneId: "p3", pitch: -8, yaw: -30, facing: 180 },
+  // },
+  // p3: {
+  //   toP2: { sceneId: "p2", pitch: -15, yaw: 260 },
+  //   toP4: { sceneId: "p4", pitch: -8, yaw: 140 },
+  // },
+  // p4: {
+  //   toP3: { sceneId: "p3", pitch: -9, yaw: 190 },
+  //   toP5: { sceneId: "p5", pitch: -15, yaw: 30 },
+  // },
+  // p5: {
+  //   toP4: { sceneId: "p4", pitch: -15, yaw: 35, facing: 180 },
+  //   toP6: { sceneId: "p6", pitch: -15, yaw: 250 },
+  // },
+  // p6: {
+  //   toP5: { sceneId: "p5", pitch: -15, yaw: 45 },
+  //   toP7: { sceneId: "p7", pitch: -10, yaw: 200 },
+  // },
+  // p7: {
+  //   toP6: { sceneId: "p6", pitch: -8, yaw: 30 },
+  //   toP1: { sceneId: "p1", pitch: -5, yaw: 290 },
+  // },
 };
 
 export const scenes = panoramas.map((p) => ({

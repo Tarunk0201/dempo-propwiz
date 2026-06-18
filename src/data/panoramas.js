@@ -34,4 +34,9 @@ export const panoramas = [
     name: "Panorama 7",
     image: "./panoramas/7.jpg",
   },
+  {
+    id: "p8",
+    name: "Panorama 8",
+    image: "./panoramas/8.jpg",
+  },
 ];
