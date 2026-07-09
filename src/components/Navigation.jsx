@@ -81,7 +81,7 @@ const Navigation = ({
       icon: <MapPin size={24} />,
       url: "https://maps.app.goo.gl/JFg4jQaJsxN6457D9",
     },
-    // { label: "Gallery", icon: <Camera size={24} /> },
+    { label: "Gallery", icon: <Camera size={24} /> },
     // {
     //   label: "Cinematic Video",
     //   icon: <Play size={24} />,
