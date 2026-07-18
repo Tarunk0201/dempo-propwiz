@@ -28,6 +28,7 @@ const PanoramaViewer = ({
 }) => {
   const ref = useRef();
   const viewerRef = useRef(null);
+  const loadedSceneIdRef = useRef(currentSceneId);
   const [adjustedHotspots, setAdjustedHotspots] = useState(labelHotspots);
 
   useEffect(() => {
@@ -166,18 +167,23 @@ const PanoramaViewer = ({
                   clickHandlerFunc: (e, args) => {
                     const viewer = viewerRef.current;
                     if (viewer) {
-                      viewer.loadScene(
-                        args.sceneId,
-                        undefined,
-                        args.targetYaw,
-                        120, // Start HFOV (zoomed-in)
-                        500, // Fade duration
-                      );
+                      loadedSceneIdRef.current = args.sceneId;
+                      viewer.lookAt(args.pitch, args.yaw, 60, 500, () => {
+                        viewer.loadScene(
+                          args.sceneId,
+                          undefined,
+                          args.targetYaw,
+                          120, // Start HFOV (zoomed-out)
+                          500, // Fade duration
+                        );
+                      });
                     }
                   },
                   clickHandlerArgs: {
                     sceneId: link.sceneId,
                     targetYaw: link.facing,
+                    pitch: link.pitch || 0,
+                    yaw: link.yaw || 0,
                   },
                 }),
               ),
@@ -223,10 +229,17 @@ const PanoramaViewer = ({
             clickHandlerFunc: (e, args) => {
               const viewer = viewerRef.current;
               if (viewer) {
-                viewer.loadScene(args.sceneId, undefined, undefined, 80, 500);
+                loadedSceneIdRef.current = args.sceneId;
+                viewer.lookAt(args.pitch, args.yaw, 60, 500, () => {
+                  viewer.loadScene(args.sceneId, undefined, undefined, 120, 500);
+                });
               }
             },
-            clickHandlerArgs: { sceneId: hotspot.sceneId },
+            clickHandlerArgs: {
+              sceneId: hotspot.sceneId,
+              pitch: hotspot.pitch,
+              yaw: hotspot.yaw,
+            },
           }));
           pannellumConfig.scenes.aerial.hotSpots.push(...aerialHotspots);
         }
@@ -237,19 +250,21 @@ const PanoramaViewer = ({
         );
         viewerRef.current.on("load", () => onReady && onReady());
         viewerRef.current.on("scenechange", (id) => {
+          loadedSceneIdRef.current = id;
           if (onSceneChange) onSceneChange(id);
           const viewer = viewerRef.current;
           if (viewer) {
             const sceneConfig = viewer.getConfig().scenes[id];
             const targetHfov =
-              sceneConfig && sceneConfig.hfov ? sceneConfig.hfov : 120;
-            viewer.setHfov(targetHfov, 500);
+              sceneConfig && sceneConfig.hfov ? sceneConfig.hfov : 95;
+            viewer.setHfov(targetHfov, 800);
           }
         });
-      } else if (viewerRef.current.getScene() !== currentSceneId) {
+      } else if (loadedSceneIdRef.current !== currentSceneId) {
         const viewer = viewerRef.current;
         if (viewer) {
-          viewer.loadScene(currentSceneId, undefined, undefined, 80, 500);
+          loadedSceneIdRef.current = currentSceneId;
+          viewer.loadScene(currentSceneId, undefined, undefined, 120, 500);
         }
       }
     }

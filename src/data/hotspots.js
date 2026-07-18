@@ -51,7 +51,6 @@ export const navigationLinks = {
   "Scene 5": { sceneId: "p5", facing: 0 },
   "Scene 6": { sceneId: "p6", facing: 0 },
   "Scene 7": { sceneId: "p7", facing: 0 },
-  "Scene 8": { sceneId: "p8", facing: 0 },
 };
 
 export const labelHotspots = {
